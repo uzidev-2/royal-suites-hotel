@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  
+  --color-brand-black: #0A0A0A;
+  --color-brand-charcoal: #1A1A1A;
+  --color-brand-ivory: #FDFCF8;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gold: #C5A059;
+  --color-brand-gold-light: #D4B67C;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-ivory text-brand-charcoal font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.serif { font-family: var(--font-serif); }
+.sans { font-family: var(--font-sans); }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  @keyframes slow-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  
+  .animate-slow-zoom {
+    animation: slow-zoom 20s ease-in-out infinite alternate;
+  }
+}
